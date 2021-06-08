@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
+const axios = require('axios');
 require('newrelic');
 
 const app = express();
@@ -19,6 +20,10 @@ app.use(morgan('dev'));
 
 app.get('/:id', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../public', 'index.html'));
+});
+
+app.get('/api/title/:id', (req, res) => {
+  res.redirect(`http://localhost:3001/${req.params.id}`);
 });
 
 app.listen(PORT, () => {

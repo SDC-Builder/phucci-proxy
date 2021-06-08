@@ -23,7 +23,7 @@ let id = 9000000;
 export default function main() {
   let response;
 
-  response = http.get(`http://localhost:4000/${id + __VU}`);
+  response = http.get(`http://localhost:4000/api/title/${id + __VU}`);
 
   // Automatically added sleep
   sleep(1);
