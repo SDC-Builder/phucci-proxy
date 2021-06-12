@@ -15,15 +15,16 @@ if (process.env.NODE_ENV !== 'production') {
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static(path.resolve(__dirname, '../public')));
-app.use(morgan('dev'));
+// app.use(morgan('dev'));
 
 
 app.get('/:id', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../public', 'index.html'));
+  return res.sendFile(path.resolve(__dirname, '../public', 'index.html'));
 });
 
 app.get('/api/title/:id', (req, res) => {
-  res.redirect(`http://localhost:3001/${req.params.id}`);
+  return res.redirect(`http://13.57.36.223:3001/api/title/${req.params.id}`);
+
 });
 
 app.listen(PORT, () => {
