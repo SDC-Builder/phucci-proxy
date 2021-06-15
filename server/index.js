@@ -23,7 +23,7 @@ app.get('/:id', (req, res) => {
 });
 
 app.get('/api/title/:id', (req, res) => {
-  return res.redirect(`http://13.57.36.223:3001/api/title/${req.params.id}`);
+  return res.redirect(`http://18.144.174.185/api/title/${req.params.id}`);
 
 });
 
