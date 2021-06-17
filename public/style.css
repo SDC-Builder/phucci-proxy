@@ -1,0 +1,233 @@
+
+.title-service {
+  height: 455px;
+	width: 1792px;
+  position: relative;
+  /* -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent; */
+  font-size: 14px;
+  line-height: 21px;
+  font-family: OpenSans,Arial,sans-serif;
+  /* -webkit-font-smoothing: antialiased; */
+  color: #fff;
+  position: relative;
+  text-align: left;
+  /* background-image: linear-gradient(90deg, rgb(140, 21, 21), rgb(210, 194, 149)); */
+}
+
+.title-inner {
+  height: 455px;
+	width: 1440px;
+  position: relative;
+  float: left;
+  margin-top: 40px;
+  margin-left: 60px
+}
+
+.title-service1 {
+  height: 359px;
+	width: 720px;
+  position: relative;
+  float: left;
+}
+
+ .title-nav {
+	/* Font & Text */
+	font-family: OpenSans, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 21px;
+	text-align: left;
+	color: rgb(255, 255, 255);
+
+	/* Box */
+  height: 21px;
+  width: 600px;
+  /* padding: 20px; */
+
+	/* Positioning */
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+
+	/* Miscellaneous */
+	overflow: visible;
+	cursor: pointer;
+	visibility: visible;
+}
+
+.banner-title {
+	/* Font & Text */
+	font-family: OpenSansBoldOptional, Arial, sans-serif;
+	font-size: 34px;
+	font-weight: 500;
+  padding-top: 10px;
+  padding-bottom: 10px;
+	line-height: 46px;
+	text-decoration: none solid rgb(255, 255, 255);
+	text-align: left;
+	white-space: normal;
+
+	/* Color & Background */
+	background-attachment: scroll;
+	background-color: rgba(0, 0, 0, 0);
+	background-repeat: repeat;
+	color: rgb(255, 255, 255);
+
+	/* Box */
+	height: 46px;
+	width: 300px;
+  white-space: nowrap;
+
+	/* Positioning */
+	position: static;
+
+
+
+	/* Miscellaneous */
+	overflow: visible;
+	cursor: auto;
+	visibility: visible;
+}
+
+.instructor {
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  color: rgb(255, 255, 255);
+  background-color: rgb(42, 115, 204);
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+  max-width: 28px;
+  font-size: 14px;
+  height: 28px;
+  width: 28px;
+  margin-right: 8px;
+}
+
+.title-instructorName {
+  font-family: OpenSans, Arial, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	letter-spacing: normal;
+	line-height: 19px;
+	text-decoration: none solid rgb(255, 255, 255);
+}
+
+.offered {
+  margin-bottom: 0;
+  font-size: .9rem;
+  margin-right: 5px;
+  color: white;
+  font-size: 14px;
+  font-family: OpenSans, Arial, sans-serif;
+  /* text-align: center; */
+}
+
+.university {
+  font-size: 20px;
+  /* text-align: center; */
+  color: white;
+  padding-top: 10px;
+}
+
+.side-bar {
+  height: 359px;
+	width: 720px;
+  position: relative;
+  float: left;
+  /* margin-left: 435px;
+  text-align: center; */
+}
+
+.title-star {
+  width: 300px;
+  height: 29px;
+  margin-top: 20px;
+}
+
+.title-rating, .title-num {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.title-overall-star {
+  cursor: pointer;
+}
+
+.white-box {
+  background-color: white;
+  width: 179px;
+  height: 81px;
+  border: 1px;
+  margin-top: 50px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.title-charge {
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  padding: 15px 10px 10px;
+  font-size: 16px;
+}
+
+.title-date {
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  font-size: 12px;
+}
+
+.title-aid {
+  font-family: OpenSans, Arial, sans-serif;
+  width: 150px;
+  height: 18px;
+  position: relative;
+  display: inline-block;
+  padding-top: 20px;
+  font-weight: 700;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.enrolled {
+  font-family: OpenSans, Arial, sans-serif;
+  margin-top: 30px;
+  color: white;
+  font-size: 16px;
+  display: flex
+}
+
+.instructor-main {
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  /* padding-bottom: 10px; */
+}
+
+#title-top-instructor {
+  background-color: #006ff9;
+  border: 1px solid #fff;
+  border-radius: 2px;
+  color: #fff;
+  display: inline-block;
+  font-family: OpenSans,sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 10px;
+  padding: 2px 5px;
+  text-transform: uppercase;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
