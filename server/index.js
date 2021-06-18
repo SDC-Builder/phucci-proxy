@@ -5,6 +5,7 @@ const morgan = require('morgan');
 const axios = require('axios');
 require('newrelic');
 const fs = require('fs');
+const generateHtml = require('./html-template/htmlGenerator');
 
 const app = express();
 const PORT = 4000;
@@ -12,8 +13,9 @@ const PORT = 4000;
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import TitleService from './../phucci-titleBanner-service/client/src/template.jsx';
+import ReactDom from 'react-dom';
 
-console.log('TitleService = ', TitleService);
+
 
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
@@ -24,24 +26,28 @@ app.use(bodyParser.json());
 app.use(express.static(path.resolve(__dirname, '../public')));
 // app.use(morgan('dev'));
 
-const Title = ReactDOMServer.renderToString(<TitleService />);
-const indexHtmlDir = path.resolve('./public/index.html');
 let renderedHtml;
 
-fs.readFile(indexHtmlDir, 'utf8', (err, data) => {
-  if (err) { return console.log('ERROR READING HTML = ', err); }
-  renderedHtml = data.replace('<div id="title"></div>', `<div id="title">${Title}</div>`);
-});
+const getTitle = async (id) => {
+  try {
+    let res = await axios.get(`http://18.144.174.185/api/title/${id}`);
+    const Title = ReactDOMServer.renderToString(<TitleService title={res.data.tittle} />);
 
-app.get('/', (req, res) => {
-  return res.send(renderedHtml);
-});
+    let data = generateHtml();
+    renderedHtml = data.replace('<div id="title"></div>', `<div id="title">${Title}</div>`);
+    return renderedHtml = renderedHtml.replace('<div id="enrollmennt">0</div>', `<div id="enrollmennt">${res.data.enrollments}</div>`);
+  }
+  catch(e) { return console.log('ERROR FETCHING TITLE = ', e); }
+}
 
 app.get('/:id', async (req, res) => {
-  return res.send(renderedHtml);
+
+  await getTitle(req.params.id);
+  res.send(renderedHtml);
 });
 
 
 app.listen(PORT, () => {
   console.log(`Proxy listening at port ${PORT}`);
 });
+
