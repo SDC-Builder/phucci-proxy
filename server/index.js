@@ -5,7 +5,7 @@ const morgan = require('morgan');
 const axios = require('axios');
 require('newrelic');
 const fs = require('fs');
-const generateHtml = require('./html-template/htmlGenerator');
+let htmlTemplate = require('./html-template/htmlGenerator');
 
 const app = express();
 const PORT = 4000;
@@ -30,11 +30,10 @@ let renderedHtml;
 
 const getTitle = async (id) => {
   try {
-    let res = await axios.get(`http://18.144.174.185/api/title/${id}`);
+    let res = await axios.get(`http://13.57.36.223/api/title/${id}`);
     const Title = ReactDOMServer.renderToString(<TitleService title={res.data.tittle} />);
 
-    let data = generateHtml();
-    renderedHtml = data.replace('<div id="title"></div>', `<div id="title">${Title}</div>`);
+    renderedHtml = htmlTemplate.replace('<div id="title"></div>', `<div id="title">${Title}</div>`);
     return renderedHtml = renderedHtml.replace('<div id="enrollmennt">0</div>', `<div id="enrollmennt">${res.data.enrollments}</div>`);
   }
   catch(e) { return console.log('ERROR FETCHING TITLE = ', e); }

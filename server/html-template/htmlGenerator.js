@@ -1,4 +1,4 @@
-const generateHtml = () => `
+const template = `
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -88,4 +88,4 @@ const generateHtml = () => `
 </html>`;
 
 
-module.exports = generateHtml;
+module.exports = template;
