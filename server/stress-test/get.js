@@ -3,7 +3,9 @@ import http from "k6/http";
 
 export const options = {
   stages: [
-    { duration: "1s", target: 1000, rps: 1000 },
+    { duration: "0.25s", target: 200, rps: 1000 },
+    { duration: "0.25", target: 500, rps: 1000 },
+    { duration: "0.5", target: 1000, rps: 1000 },
   ],
   ext: {
     loadimpact: {
@@ -23,7 +25,7 @@ let id = 9000000;
 export default function main() {
   let response;
 
-  response = http.get(`http://localhost:4000/api/title/${id + __VU}`);
+  response = http.get(`http://localhost:4000/${id}`);
 
   // Automatically added sleep
   sleep(1);
