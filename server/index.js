@@ -55,9 +55,8 @@ app.get('/:id', async (req, res) => {
   if (cachedData) { return res.send(cachedData); }
 
   await getTitle(req.params.id);
-
-  const cachedResult = await setCache(req.params.id, renderedHtml, 'EX', 5);
   res.send(renderedHtml);
+  return setCache(req.params.id, renderedHtml, 'EX', 5);
 });
 
 
